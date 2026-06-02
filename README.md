@@ -2,57 +2,62 @@
 
 # ShopSphere - E-Commerce Backend API
 
-Backend-only e-commerce application built with Spring Boot, Spring Data JPA, Hibernate, MySQL, Maven, and Lombok.
+A backend-only E-Commerce application built using Spring Boot, Spring Data JPA, Hibernate, MySQL, Maven, and Lombok.
+
+## Tech Stack
+
+* Java 21
+* Spring Boot
+* Spring Data JPA
+* Hibernate
+* MySQL
+* Maven
+* Lombok
 
 ## Features
 
 ### Category Management
-- Add Category
-- Update Category
-- Delete Category
-- View Categories
+
+* Create Category
+* Update Category
+* Delete Category
+* View Categories
 
 ### Product Management
-- Add Product
-- Update Product
-- Delete Product
-- View Products
-- Search Products
+
+* Create Product
+* Update Product
+* Delete Product
+* View Products
+* Search Products
 
 ### Customer Management
-- Add Customer
-- Update Customer
-- View Customers
+
+* Create Customer
+* Update Customer
+* View Customers
 
 ### Shopping Cart
-- Add Product To Cart
-- Remove Product From Cart
-- View Cart
+
+* Add Product to Cart
+* Remove Product from Cart
+* View Cart
 
 ### Order Management
-- Place Order
-- View Orders
-- View Order Details
 
-## Tech Stack
-
-- Java
-- Spring Boot
-- Spring Data JPA
-- Hibernate
-- MySQL
-- Maven
-- Lombok
+* Place Order
+* View Orders
+* View Order Details
 
 ## Architecture
 
-Controller
-→ Service
-→ Repository
-→ MySQL
+```text
+Controller → Service → Repository → MySQL
+```
 
-## Database Relationships
+## Entity Relationships
 
+```text
 Category (1) → (*) Product
 
 Customer (1) → (1) Cart
@@ -62,10 +67,34 @@ Cart (1) → (*) CartItem
 Customer (1) → (*) Order
 
 Order (1) → (*) OrderItem
+```
 
 ## Running the Project
 
-1. Create MySQL database:
-
 ```sql
 CREATE DATABASE shopsphere_db;
+```
+
+Update database credentials in:
+
+```text
+src/main/resources/application.properties
+```
+
+Run:
+
+```bash
+mvn spring-boot:run
+```
+
+## Future Improvements
+
+* Swagger/OpenAPI
+* Spring Security + JWT
+* Pagination & Sorting
+* Docker
+* Unit Testing
+
+---
+
+Built to practice Spring Boot backend development, JPA relationships, DTO mapping, validation, exception handling, and MySQL integration.
